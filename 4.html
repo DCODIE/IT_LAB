@@ -1,0 +1,51 @@
+<!--Write a JavaScript program using prototype to implement a calculator-->
+<html>
+<body>
+<script>
+	function calculator(x,y)
+	{
+		this.x=x;
+		this.y=y;
+	}
+
+	calculator.prototype.add=function()
+	{
+		document.write("Addition is: "+(this.x+this.y));
+	}
+
+	calculator.prototype.sub=function()
+	{
+		console.log("Subtraction is: "+(this.x-this.y));
+	}
+	
+	calculator.prototype.mul=function()
+	{
+		console.log("Multiplication is: "+(this.x*this.y));
+	}
+	
+	calculator.prototype.div=function()
+	{
+		if(this.y==0)
+			console.log("Error: Divide by zero");
+		else
+			console.log("Division is: "+(this.x/this.y));
+	}
+
+	a=parseInt(prompt("Enter the number"));
+	b=parseInt(prompt("Enter the number"));
+	c=parseInt(prompt("Enter 1)add 2)sub 3)mul 4)div"));
+	
+	var cal=new calculator(a,b);
+	
+	if(c==1)
+		cal.add();
+	else if(c==2)
+		cal.sub();
+	else if(c==3)
+		cal.mul();
+	else
+		cal.div();
+			
+</script>
+</body>
+</html>
