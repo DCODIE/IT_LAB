@@ -1,0 +1,31 @@
+<html>
+<body>
+<script>
+function getFrequency(string) 
+{
+    	var freq = {}
+    	for (var i=0; i<string.length;i++) 
+	{
+        	var character = string.charAt(i)
+        	if (freq[character]) 
+		{
+           		freq[character]++
+        	} 
+		else 
+		{
+           		freq[character] = 1
+        	}
+    	}
+	
+    	return freq
+}
+str=prompt("Enter a string")
+ans=getFrequency(str)
+document.write(JSON.stringify(ans))
+console.log(ans)
+</script>
+</body>
+</html>
+<!--Write a Java script function charFreq() that takes a string and builds a frequency listing of
+the characters contained in it. Represent the frequency listing as a Javascript object. Try it
+with something like charFreq("abbabcbdbabdbdbabababcbcbab")-->
